@@ -1,31 +1,65 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Timesifier's status page: https://status.timesifier.com
+# Upptime reads this file. https://upptime.js.org/docs/configuration
+#
+# The workflows in .github/workflows are this repository's own, not the ones
+# Upptime generates: they run on the workflow's GITHUB_TOKEN alone, each with
+# only the permissions it needs, and every action is pinned to a commit.
+# Nothing here rewrites them (Upptime's "Update Template CI" and "Updates CI"
+# are left out), so no personal access token is needed. See README.md.
+
+owner: ayoinc
+repo: timesifier-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  # The application's own check of its database and its files (TS-107a). It
+  # answers 503 when either fails, and its body always says which.
+  - name: Health
+    url: https://timesifier.com/health
+    expectedStatusCodes:
+      - 200
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  # The four public pages.
+  - name: Home page
+    url: https://timesifier.com/
+    expectedStatusCodes:
+      - 200
+  - name: Sign-in page
+    url: https://timesifier.com/sign-in
+    expectedStatusCodes:
+      - 200
+  - name: Privacy notice
+    url: https://timesifier.com/privacy
+    expectedStatusCodes:
+      - 200
+  - name: Terms
+    url: https://timesifier.com/terms
+    expectedStatusCodes:
+      - 200
+
+# GITHUB_TOKEN cannot change a repository's settings or delete an issue, so
+# Upptime is told not to try.
+skipDescriptionUpdate: true
+skipTopicsUpdate: true
+skipHomepageUpdate: true
+skipDeleteIssues: true
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.timesifier.com
+  name: Timesifier status
+  logoUrl: /logo.svg
+  logoHref: https://timesifier.com
+  favicon: /logo-192.png
+  faviconSvg: /logo.svg
+  introTitle: "Is **Timesifier** up?"
+  introMessage: >-
+    Checked every 5 minutes from GitHub's servers, outside Cloudflare, where
+    Timesifier runs. If this address does not open, the same checks and any
+    open incident are at
+    [github.com/ayoinc/timesifier-status](https://github.com/ayoinc/timesifier-status).
   navbar:
     - title: Status
       href: /
+    - title: Timesifier
+      href: https://timesifier.com
     - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+      href: https://github.com/ayoinc/timesifier-status
