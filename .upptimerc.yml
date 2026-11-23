@@ -46,10 +46,10 @@ skipDeleteIssues: true
 status-website:
   cname: status.timesifier.com
   name: Timesifier status
-  logoUrl: /logo.svg
+  logoUrl: https://raw.githubusercontent.com/ayoinc/timesifier-status/master/assets/logo.svg
   logoHref: https://timesifier.com
   favicon: /logo-192.png
-  faviconSvg: /logo.svg
+  faviconSvg: https://raw.githubusercontent.com/ayoinc/timesifier-status/master/assets/logo.svg
   introTitle: "Is **Timesifier** up?"
   introMessage: >-
     Checked every 5 minutes from GitHub's servers, outside Cloudflare, where
