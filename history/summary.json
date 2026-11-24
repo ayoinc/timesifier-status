@@ -4,19 +4,20 @@
     "url": "https://timesifier.com/health",
     "icon": "https://icons.duckduckgo.com/ip3/timesifier.com.ico",
     "slug": "health",
-    "status": "down",
-    "uptime": "5.71%",
-    "uptimeDay": "5.71%",
-    "uptimeWeek": "5.71%",
-    "uptimeMonth": "5.71%",
-    "uptimeYear": "5.71%",
-    "time": 182,
-    "timeDay": 182,
-    "timeWeek": 182,
-    "timeMonth": 182,
-    "timeYear": 182,
+    "status": "up",
+    "uptime": "0.02%",
+    "uptimeDay": "0.02%",
+    "uptimeWeek": "0.02%",
+    "uptimeMonth": "0.02%",
+    "uptimeYear": "0.02%",
+    "time": 201,
+    "timeDay": 201,
+    "timeWeek": 201,
+    "timeMonth": 201,
+    "timeYear": 201,
     "dailyMinutesDown": {
-      "2026-11-23": 3
+      "2026-11-24": 259,
+      "2026-11-23": 1004
     }
   },
   {
